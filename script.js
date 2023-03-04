@@ -4,42 +4,48 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    let playerWin = (playerSelection, computerSelection) => 
+        `You win! ${playerSelection} beats ${computerSelection}!`;
+    
+    let playerLose = (playerSelection, computerSelection) =>
+        `You lose! ${computerSelection} beats ${playerSelection}!`;
+    
+    let tie = (computerSelection) =>
+        `Tie! Both players chose ${computerSelection}!`;
+    
     switch(playerSelection.toLowerCase()) {
         case 'rock':
             if(computerSelection == 'Rock') {
-                return `Tie! Both players chose ${computerSelection}!`;
+                return tie(computerSelection);
             }
             else if(computerSelection == 'Paper') {
-                return `You lose! ${computerSelection} beats ${playerSelection}!`;
+                return playerLose(playerSelection, computerSelection);
             }
             else {
-                return `You win! ${playerSelection} beats ${computerSelection}!`;
+                return playerWin(playerSelection, computerSelection);
             }
-            break;
+        
         case 'paper':
             if(computerSelection == 'Rock') {
-                return `You win! ${playerSelection} beats ${computerSelection}!`;
+                return playerWin(playerSelection, computerSelection);
             }
             else if(computerSelection == 'Paper') {
-                return `Tie! Both players chose ${computerSelection}!`;
+                return tie(computerSelection);
             }
             else {
-                return `You lose! ${computerSelection} beats ${playerSelection}!`;
+                return playerLose(playerSelection, computerSelection);
             }
-            break;
+        
         case 'scissors':
             if(computerSelection == 'Rock') {
-                return `You lose! ${computerSelection} beats ${playerSelection}!`;
+                return playerLose(playerSelection, computerSelection);
             }
             else if(computerSelection == 'Paper') {
-                return `You win! ${playerSelection} beats ${computerSelection}!`;
+                return playerWin(playerSelection, computerSelection);
             }
             else {
-                return `Tie! Both players chose ${computerSelection}!`;
-            }
-            break;
-        default:
-            return 'Invalid choice. Please only select from the three';          
+                return tie(computerSelection);
+            }            
     }
 }
 
