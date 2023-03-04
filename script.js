@@ -42,3 +42,13 @@ function playRound(playerSelection, computerSelection) {
             return 'Invalid choice. Please only select from the three';          
     }
 }
+
+function game (){
+    let playerSelection; 
+    let computerSelection 
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt('Choice?');
+        computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
