@@ -87,23 +87,3 @@ function playRound(playerSelection, computerSelection) {
             }            
     }
 }
-
-function game (){
-    let playerSelection, computerSelection;
-    let playerScore = 0; 
-    let computerScore = 0;
-    let result, message;
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt('Choice?');
-        computerSelection = getComputerChoice();
-
-        result = playRound(playerSelection, computerSelection);
-        message = result[0];
-
-        playerScore = playerScore + result[1];
-        computerScore = computerScore + result[2];
-
-        console.log(`${message} Player score: ${playerScore}, Computer score: ${computerScore}`);
-
-    }
-}
