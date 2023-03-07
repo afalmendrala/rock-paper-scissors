@@ -3,7 +3,11 @@ body {
 }
 
 button {
-    font-family: inherit;
+    all: unset;
+    border: 3px solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .header {
