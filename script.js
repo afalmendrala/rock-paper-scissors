@@ -102,6 +102,17 @@ function changeButtonsState(buttons) {
     } 
 }
 
+function playAgainEvent() {
+    changeButtonsState(buttons);
+    playerScore = 0;
+    computerScore = 0;
+    buttonClickCount = 0;
+    body.removeChild(message);
+    body.removeChild(scores);
+    body.removeChild(winner);
+    body.removeChild(playAgain);
+}
+
 const buttons = document.querySelectorAll('.choice');
 const body = document.querySelector('body');
 
@@ -112,6 +123,9 @@ let buttonClickCount = 0;
 let message = document.createElement('p');
 let scores = document.createElement('p');
 let winner = document.createElement('p');
+
+const playAgain = document.createElement('button');
+playAgain.textContent = 'Play again?'
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -124,19 +138,10 @@ buttons.forEach((button) => {
             changeButtonsState(buttons);
             showGameWinner(playerScore, computerScore);
             
-            const playAgain = document.createElement('button');
-            playAgain.textContent = 'Play again?'
             body.appendChild(playAgain);
             
             playAgain.addEventListener('click', () => {
-                changeButtonsState(buttons);
-                playerScore = 0;
-                computerScore = 0;
-                buttonClickCount = 0;
-                body.removeChild(message);
-                body.removeChild(scores);
-                body.removeChild(winner);
-                body.removeChild(playAgain);
+                playAgainEvent();
             });
         }
     });
