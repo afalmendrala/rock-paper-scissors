@@ -134,15 +134,16 @@ buttons.forEach((button) => {
         playRound(button.value, getComputerChoice());
         
         if(buttonClickCount == 5){ 
-
             changeButtonsState(buttons);
+        
             showGameWinner(playerScore, computerScore);
-            
+        
             body.appendChild(playAgain);
             
-            playAgain.addEventListener('click', () => {
-                playAgainEvent();
-            });
         }
     });
+});
+
+playAgain.addEventListener('click', () => {
+    playAgainEvent();
 });
