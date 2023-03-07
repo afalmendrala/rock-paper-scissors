@@ -4,14 +4,29 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {  
-    let playerWin = (playerSelection, computerSelection) => 
-        `You win! ${playerSelection} beats ${computerSelection}!`;
+    let playerWin = (playerSelection, computerSelection) => {
+        playerScore = playerScore + 1;
+        message.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+        scores.textContent = showScores(playerScore, computerScore);
+        body.appendChild(message);
+        body.appendChild(scores);
+    }
     
-    let playerLose = (playerSelection, computerSelection) =>
-        `You lose! ${computerSelection} beats ${playerSelection}!`;
+    let playerLose = (playerSelection, computerSelection) => {
+        computerScore = computerScore + 1;
+        message.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
+        scores.textContent = showScores(playerScore, computerScore);
+        body.appendChild(message);
+        body.appendChild(scores);
+    }
     
-    let tie = (computerSelection) =>
-        `Tie! Both players chose ${computerSelection}!`;
+    let tie = (computerSelection) => {
+        message.textContent = `Tie! Both players chose ${computerSelection}!`;
+        scores.textContent = showScores(playerScore, computerScore);
+        body.appendChild(message);
+        body.appendChild(scores);
+    }
+
 
     let showScores = (playerScore, computerScore) =>
         `Player score ${playerScore}, Computer score: ${computerScore}`;
@@ -19,85 +34,43 @@ function playRound(playerSelection, computerSelection) {
     switch(playerSelection.toLowerCase()) {
         case 'rock':
             if(computerSelection == 'Rock') {
-                message.textContent = tie(computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                tie(computerSelection);
                 break;
             }
             else if(computerSelection == 'Paper') {
-                computerScore = computerScore + 1;
-                message.textContent = playerLose(playerSelection, computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                playerLose(playerSelection, computerSelection);
                 break;
             }
             else {
-                playerScore = playerScore + 1;
-                message.textContent = playerWin(playerSelection, computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                playerWin(playerSelection, computerSelection);
                 break;
             }
         
         case 'paper':
             if(computerSelection == 'Rock') {
-                playerScore = playerScore + 1;
-                message.textContent = playerWin(playerSelection, computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                playerWin(playerSelection, computerSelection);
                 break;
             }
             else if(computerSelection == 'Paper') {
-                message.textContent = tie(computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                tie(computerSelection);
                 break;
             }
             else {
-                computerScore = computerScore + 1;
-                message.textContent = playerLose(playerSelection, computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                playerLose(playerSelection, computerSelection);
                 break;
             }
         
         case 'scissors':
             if(computerSelection == 'Rock') {
-                computerScore = computerScore + 1;
-                message.textContent = playerLose(playerSelection, computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                playerLose(playerSelection, computerSelection);
                 break;
             }
             else if(computerSelection == 'Paper') {
-                playerScore = playerScore + 1;
-                message.textContent = playerWin(playerSelection, computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                playerWin(playerSelection, computerSelection);
                 break;
             }
             else {
-                message.textContent = tie(computerSelection);
-                scores.textContent = showScores(playerScore, computerScore);
-
-                body.appendChild(message);
-                body.appendChild(scores);
+                tie(computerSelection);
                 break;
             }            
     }
