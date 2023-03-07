@@ -5,3 +5,26 @@ body {
 button {
     font-family: inherit;
 }
+
+.header {
+    text-align: center;
+}
+
+.title, .subtitle {
+    margin: 0;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.subtitle {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+span {
+    font-style: italic;
+    font-weight: 700;
+}
