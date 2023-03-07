@@ -3,8 +3,7 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
-      
+function playRound(playerSelection, computerSelection) {  
     let playerWin = (playerSelection, computerSelection) => 
         `You win! ${playerSelection} beats ${computerSelection}!`;
     
@@ -13,6 +12,9 @@ function playRound(playerSelection, computerSelection) {
     
     let tie = (computerSelection) =>
         `Tie! Both players chose ${computerSelection}!`;
+
+    let showScores = (playerScore, computerScore) =>
+        `Player score ${playerScore}, Computer score: ${computerScore}`;
     
     switch(playerSelection.toLowerCase()) {
         case 'rock':
@@ -99,10 +101,6 @@ function playRound(playerSelection, computerSelection) {
                 break;
             }            
     }
-}
-
-function showScores(playerScore, computerScore) {
-    return `Player score ${playerScore}, Computer score: ${computerScore}`;
 }
 
 function showGameWinner(playerScore, computerScore) {
