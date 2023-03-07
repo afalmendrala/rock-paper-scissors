@@ -78,13 +78,16 @@ function playRound(playerSelection, computerSelection) {
 
 function showGameWinner(playerScore, computerScore) {
     if(playerScore > computerScore) {
-        return 'Player wins!';
+        winner.textContent = 'Player wins!';
+        body.appendChild(winner);
     }
     else if(playerScore < computerScore) {
-        return 'Computer wins!';
+        winner.textContent = 'Computer wins!';
+        body.appendChild(winner);
     }
     else {
-        return 'Tie!';
+        winner.textContent = 'Tie!';
+        body.appendChild(winner);
     }
 }
 
@@ -117,10 +120,9 @@ buttons.forEach((button) => {
         playRound(button.value, getComputerChoice());
         
         if(buttonClickCount == 5){ 
-            winner.textContent = showGameWinner(playerScore, computerScore);
-            body.appendChild(winner);
 
             changeButtonsState(buttons);
+            showGameWinner(playerScore, computerScore);
             
             const playAgain = document.createElement('button');
             playAgain.textContent = 'Play again?'
