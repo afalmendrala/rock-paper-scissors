@@ -4,9 +4,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    let playerScore = 0
-    let computerScore = 0;
-    
+      
     let playerWin = (playerSelection, computerSelection) => 
         `You win! ${playerSelection} beats ${computerSelection}!`;
     
@@ -19,71 +17,86 @@ function playRound(playerSelection, computerSelection) {
     switch(playerSelection.toLowerCase()) {
         case 'rock':
             if(computerSelection == 'Rock') {
-                return [
-                    tie(computerSelection),
-                    playerScore,
-                    computerScore
-                ];
+                message.textContent = tie(computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
             else if(computerSelection == 'Paper') {
-                return [
-                    playerLose(playerSelection, computerSelection),
-                    playerScore,
-                    computerScore = computerScore + 1
-                ];
+                computerScore = computerScore + 1;
+                message.textContent = playerLose(playerSelection, computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
             else {
-                return [
-                    playerWin(playerSelection, computerSelection),
-                    playerScore = playerScore + 1,
-                    computerScore
-                ];
+                playerScore = playerScore + 1;
+                message.textContent = playerWin(playerSelection, computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
         
         case 'paper':
             if(computerSelection == 'Rock') {
-                return [
-                    playerWin(playerSelection, computerSelection),
-                    playerScore = playerScore + 1,
-                    computerScore
-                ];
+                playerScore = playerScore + 1;
+                message.textContent = playerWin(playerSelection, computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
             else if(computerSelection == 'Paper') {
-                return [
-                    tie(computerSelection),
-                    playerScore,
-                    computerScore
-                ];
+                message.textContent = tie(computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
             else {
-                return [
-                    playerLose(playerSelection, computerSelection),
-                    playerScore,
-                    computerScore = computerScore + 1
-                ];
+                computerScore = computerScore + 1;
+                message.textContent = playerLose(playerSelection, computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
         
         case 'scissors':
             if(computerSelection == 'Rock') {
-                return [
-                    playerLose(playerSelection, computerSelection),
-                    playerScore,
-                    computerScore = computerScore + 1
-                ];
+                computerScore = computerScore + 1;
+                message.textContent = playerLose(playerSelection, computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
             else if(computerSelection == 'Paper') {
-                return [
-                    playerWin(playerSelection, computerSelection),
-                    playerScore = playerScore + 1,
-                    computerScore
-                ];
+                playerScore = playerScore + 1;
+                message.textContent = playerWin(playerSelection, computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }
             else {
-                return [
-                    tie(computerSelection),
-                    playerScore,
-                    computerScore
-                ];
+                message.textContent = tie(computerSelection);
+                scores.textContent = showScores(playerScore, computerScore);
+
+                body.appendChild(message);
+                body.appendChild(scores);
+                break;
             }            
     }
 }
@@ -118,28 +131,27 @@ function changeButtonsState(buttons) {
 const buttons = document.querySelectorAll('.choice');
 const body = document.querySelector('body');
 
-let roundResults;
-let playerScore = 0
-let computerScore = 0;
-let buttonClickCount = 0;
+playerScore = 0
+computerScore = 0;
+buttonClickCount = 0;
 
-let message = document.createElement('p');
-let scores = document.createElement('p');
-let winner = document.createElement('p');
+message = document.createElement('p');
+scores = document.createElement('p');
+winner = document.createElement('p');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         buttonClickCount = buttonClickCount + 1;
 
-        roundResults = playRound(button.value, getComputerChoice());
+        playRound(button.value, getComputerChoice());
         
-        message.textContent = roundResults[0];
-        body.appendChild(message);
+        // message.textContent = roundResults[0];
+        // body.appendChild(message);
 
-        playerScore = playerScore + roundResults[1];
-        computerScore = computerScore + roundResults[2];
-        scores.textContent = showScores(playerScore, computerScore);
-        body.appendChild(scores);
+        // playerScore = playerScore + roundResults[1];
+        // computerScore = computerScore + roundResults[2];
+        // scores.textContent = showScores(playerScore, computerScore);
+        // body.appendChild(scores);
 
         if(buttonClickCount == 5){ 
             winner.textContent = showGameWinner(playerScore, computerScore);
