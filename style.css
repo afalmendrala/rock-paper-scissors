@@ -32,3 +32,9 @@ span {
     font-style: italic;
     font-weight: 700;
 }
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
