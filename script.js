@@ -88,6 +88,10 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function showScores(playerScore, computerScore) {
+    return `Player score ${playerScore}, Computer score: ${computerScore}`;
+}
+
 function showGameWinner(playerScore, computerScore) {
     if(playerScore > computerScore) {
         return 'Player wins!';
@@ -134,7 +138,7 @@ buttons.forEach((button) => {
 
         playerScore = playerScore + roundResults[1];
         computerScore = computerScore + roundResults[2];
-        scores.textContent = `Player score: ${playerScore}, Computer score: ${computerScore}`;
+        scores.textContent = showScores(playerScore, computerScore);
         body.appendChild(scores);
 
         if(buttonClickCount == 5){ 
