@@ -4,33 +4,34 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {  
+    
     let playerWin = (playerSelection, computerSelection) => {
         playerScore = playerScore + 1;
         message.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
-        scores.textContent = showScores(playerScore, computerScore);
-        body.appendChild(message);
-        body.appendChild(scores);
+        showRoundResults(playerScore, computerScore);
     }
     
     let playerLose = (playerSelection, computerSelection) => {
         computerScore = computerScore + 1;
         message.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
-        scores.textContent = showScores(playerScore, computerScore);
-        body.appendChild(message);
-        body.appendChild(scores);
+        showRoundResults(playerScore, computerScore);
     }
     
     let tie = (computerSelection) => {
         message.textContent = `Tie! Both players chose ${computerSelection}!`;
+        showRoundResults(playerScore, computerScore);
+    }
+    
+    let showScores = (playerScore, computerScore) =>
+    `Player score ${playerScore}, Computer score: ${computerScore}`;
+    
+    let showRoundResults = (playerScore, computerScore) => {
         scores.textContent = showScores(playerScore, computerScore);
         body.appendChild(message);
         body.appendChild(scores);
+
     }
 
-
-    let showScores = (playerScore, computerScore) =>
-        `Player score ${playerScore}, Computer score: ${computerScore}`;
-    
     switch(playerSelection.toLowerCase()) {
         case 'rock':
             if(computerSelection == 'Rock') {
