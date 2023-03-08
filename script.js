@@ -116,6 +116,7 @@ function playAgainEvent() {
 
 const buttons = document.querySelectorAll('.choice');
 const body = document.querySelector('body');
+const content = document.querySelector('.content');
 
 let playerScore = 0
 let computerScore = 0;
