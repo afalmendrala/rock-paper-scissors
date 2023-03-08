@@ -27,8 +27,8 @@ function playRound(playerSelection, computerSelection) {
     
     let showRoundResults = (playerScore, computerScore) => {
         scores.textContent = showScores(playerScore, computerScore);
-        body.appendChild(message);
-        body.appendChild(scores);
+        content.appendChild(message);
+        content.appendChild(scores);
 
     }
 
@@ -80,15 +80,15 @@ function playRound(playerSelection, computerSelection) {
 function showGameWinner(playerScore, computerScore) {
     if(playerScore > computerScore) {
         winner.textContent = 'Player wins!';
-        body.appendChild(winner);
+        content.appendChild(winner);
     }
     else if(playerScore < computerScore) {
         winner.textContent = 'Computer wins!';
-        body.appendChild(winner);
+        content.appendChild(winner);
     }
     else {
         winner.textContent = 'Tie!';
-        body.appendChild(winner);
+        content.appendChild(winner);
     }
 }
 
@@ -108,10 +108,10 @@ function playAgainEvent() {
     playerScore = 0;
     computerScore = 0;
     buttonClickCount = 0;
-    body.removeChild(message);
-    body.removeChild(scores);
-    body.removeChild(winner);
-    body.removeChild(playAgain);
+    content.removeChild(message);
+    content.removeChild(scores);
+    content.removeChild(winner);
+    content.removeChild(playAgain);
 }
 
 const buttons = document.querySelectorAll('.choice');
@@ -140,7 +140,7 @@ buttons.forEach((button) => {
         
             showGameWinner(playerScore, computerScore);
         
-            body.appendChild(playAgain);
+            content.appendChild(playAgain);
             
         }
     });
