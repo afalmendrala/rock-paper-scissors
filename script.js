@@ -129,6 +129,10 @@ let message = document.createElement('p');
 let scores = document.createElement('p');
 let winner = document.createElement('p');
 
+message.classList.add('results');
+scores.classList.add('results');
+winner.classList.add('results');
+
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
 
