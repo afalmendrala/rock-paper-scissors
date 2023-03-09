@@ -96,9 +96,12 @@ function changeButtonsState(buttons) {
     for(let i = 0; i < buttons.length; i++) {
         if(buttons[i].disabled == false){
             buttons[i].setAttribute('disabled', true);
+            buttons[i].className = "disabled";
         }
         else {
             buttons[i].removeAttribute('disabled');
+            buttons[i].classList.remove('disabled');
+            buttons[i].classList.add('choice');
         }
     } 
 }
