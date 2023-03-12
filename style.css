@@ -6,12 +6,27 @@ button {
     all: unset;
     border: 3px solid;
     border-radius: 5px;
-    padding: 5px 10px;
     cursor: pointer;
+    text-align: center;
+}
+
+#play {
+    font-size: 30px;
+    padding: 5px 10px;
     height: 50px 50px;
     width: 200px;
-    text-align: center;
-    font-size: 30px;
+}
+
+.selection {
+    font-size: 15px;
+    font-weight: 800;
+    padding: 5px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .disabled {
@@ -48,10 +63,38 @@ span {
 .content {
     height: 50vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 50px;
+}
+
+.player, .computer {
+    text-align: center;
+}
+
+.choice-container {
+    width: 200px;
+    height: 200px;
+    border: 5px solid;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer {
+    font-size: 150px;
+    font-weight: 900;
+}
+
+.choice-text {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.choice {
+    font-size: 25px;
+    font-weight: 400;
 }
 
 .results {

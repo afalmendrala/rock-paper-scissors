@@ -15,10 +15,21 @@
         <p class="subtitle">Can <span>you</span> beat a computer?</p>
     </div>
     <div class="content">
-        <div class="choices">
-            <button class="choice" value="Rock">Rock</button>
-            <button class="choice" value="Paper">Paper</button>
-            <button class="choice" value="Scissors">Scissors</button>
+        <div class="player">
+            <div class="choice-text">Player</div>
+            <div class="choice-container"></div>
+            <div class="bottom">
+                <button class="selection prev">Prev</button>
+                <div class="choice">Rock</div>
+                <button class="selection next">Next</button>
+            </div>
+        </div>
+        <div class="middle">
+            <button id="play">Play</button>
+        </div>
+        <div class="computer">
+            <div class="choice-text">Computer</div>
+            <div class="choice-container computer">?</div>
         </div>
     </div>
 </body>
