@@ -1,5 +1,4 @@
 function getComputerChoice() {
-    const choices = Array('Rock', 'Paper', 'Scissors');
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
@@ -117,9 +116,15 @@ function playAgainEvent() {
     content.removeChild(playAgain);
 }
 
-const buttons = document.querySelectorAll('.choice');
+
 const body = document.querySelector('body');
 const content = document.querySelector('.content');
+const prev = document.querySelector('#prev');
+const next = document.querySelector('#next');
+const choice = document.querySelector('.choice');
+const choices = Array('Rock', 'Paper', 'Scissors');
+
+choice.textContent = choices[0];
 
 let playerScore = 0
 let computerScore = 0;
@@ -136,23 +141,50 @@ winner.classList.add('results');
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        buttonClickCount = buttonClickCount + 1;
+// buttons.forEach((button) => {
+//     button.addEventListener('click', () => {
+//         buttonClickCount = buttonClickCount + 1;
 
-        playRound(button.value, getComputerChoice());
+//         playRound(button.value, getComputerChoice());
         
-        if(buttonClickCount == 5){ 
-            changeButtonsState(buttons);
+//         if(buttonClickCount == 5){ 
+//             changeButtonsState(buttons);
         
-            showGameWinner(playerScore, computerScore);
+//             showGameWinner(playerScore, computerScore);
         
-            content.appendChild(playAgain);
+//             content.appendChild(playAgain);
             
-        }
-    });
+//         }
+//     });
+// });
+
+prev.addEventListener('click', () => {
+    switch (choice.textContent) {
+        case choices[0]:
+            choice.textContent = choices[2];
+            break;
+        case choices[1]:
+            choice.textContent = choices[0];
+            break;
+        case choices[2]:
+            choice.textContent = choices[1];
+            break;
+    }
 });
 
+next.addEventListener('click', () => {
+    switch (choice.textContent) {
+        case choices[0]:
+            choice.textContent = choices[1];
+            break;
+        case choices[1]:
+            choice.textContent = choices[2];
+            break;
+        case choices[2]:
+            choice.textContent = choices[0];
+            break;
+    }
+});
 playAgain.addEventListener('click', () => {
     playAgainEvent();
 });
