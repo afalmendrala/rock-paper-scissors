@@ -72,6 +72,10 @@ span {
     text-align: center;
 }
 
+#player-choice {
+    transform: scaleX(-1);
+}
+
 .choice-container {
     width: 200px;
     height: 200px;
