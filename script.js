@@ -6,20 +6,20 @@ function playRound(playerSelection, computerSelection) {
     
     let playerWin = (playerSelection, computerSelection) => {
         message.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
-        showRoundResults(playerScore, computerScore);
+        showRoundResults();
     }
     
     let playerLose = (playerSelection, computerSelection) => {
         message.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
-        showRoundResults(playerScore, computerScore);
+        showRoundResults();
     }
     
     let tie = (computerSelection) => {
         message.textContent = `Tie! Both players chose ${computerSelection}!`;
-        showRoundResults(playerScore, computerScore);
+        showRoundResults();
     }
         
-    let showRoundResults = (playerScore, computerScore) => {
+    let showRoundResults = () => {
         content.appendChild(message);
     }
 
@@ -151,6 +151,7 @@ const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
 const choice = document.querySelector('.choice');
 const play = document.querySelector('#play');
+
 
 const choices = Array('Rock', 'Paper', 'Scissors');
 choice.textContent = choices[0];
