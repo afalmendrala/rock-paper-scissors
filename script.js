@@ -20,10 +20,7 @@ function playRound(playerSelection, computerSelection) {
     }
         
     let showRoundResults = (playerScore, computerScore) => {
-        scores.textContent = showScores(playerScore, computerScore);
         content.appendChild(message);
-        content.appendChild(scores);
-
     }
 
     switch(playerSelection.toLowerCase()) {
