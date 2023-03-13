@@ -146,14 +146,19 @@ function selection(button) {
 }
 
 const body = document.querySelector('body');
-const content = document.querySelector('.content');
+const content = document.querySelector('.middle');
 const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
 const choice = document.querySelector('.choice');
+const play = document.querySelector('#play');
+const computerChoice = document.querySelector('#computer');
+
 
 const choices = Array('Rock', 'Paper', 'Scissors');
 choice.textContent = choices[0];
 document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
+computerChoice.textContent = '?';
+
 
 let playerScore = 0
 let computerScore = 0;
@@ -172,4 +177,5 @@ playAgain.textContent = 'Play again?'
 
 prev.addEventListener('click', () => selection(prev.textContent));
 next.addEventListener('click', () => selection(next.textContent));
+play.addEventListener('click', () => playRound(choice.textContent, getComputerChoice()));
 playAgain.addEventListener('click', () => playAgainEvent());
