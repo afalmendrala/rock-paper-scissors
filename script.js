@@ -5,13 +5,11 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {  
     
     let playerWin = (playerSelection, computerSelection) => {
-        playerScore = playerScore + 1;
         message.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
         showRoundResults(playerScore, computerScore);
     }
     
     let playerLose = (playerSelection, computerSelection) => {
-        computerScore = computerScore + 1;
         message.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
         showRoundResults(playerScore, computerScore);
     }
