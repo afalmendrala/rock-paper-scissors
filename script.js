@@ -4,19 +4,23 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {  
     
-    let playerWin = (playerSelection, computerSelection) =>
+    let playerWin = (playerSelection, computerSelection) => {
+        playerScore = playerScore + 1;
         message.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+        showRoundResults(playerScore, computerScore);
+    }
     
-    let playerLose = (playerSelection, computerSelection) =>
+    let playerLose = (playerSelection, computerSelection) => {
+        computerScore = computerScore + 1;
         message.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
+        showRoundResults(playerScore, computerScore);
+    }
     
-    
-    let tie = (computerSelection) =>
+    let tie = (computerSelection) => {
         message.textContent = `Tie! Both players chose ${computerSelection}!`;
-    
-    let showScores = (playerScore, computerScore) =>
-    `Player score ${playerScore}, Computer score: ${computerScore}`;
-    
+        showRoundResults(playerScore, computerScore);
+    }
+        
     let showRoundResults = (playerScore, computerScore) => {
         scores.textContent = showScores(playerScore, computerScore);
         content.appendChild(message);
