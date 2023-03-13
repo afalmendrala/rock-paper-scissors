@@ -116,6 +116,36 @@ function playAgainEvent() {
     content.removeChild(playAgain);
 }
 
+function selection(button) {
+    switch(button) {
+        case 'Prev':
+            switch (choice.textContent) {
+                case choices[0]:
+                    choice.textContent = choices[2];
+                    break;
+                case choices[1]:
+                    choice.textContent = choices[0];
+                    break;
+                case choices[2]:
+                    choice.textContent = choices[1];
+                    break;
+            }
+            break;
+        case 'Next':
+            switch (choice.textContent) {
+                case choices[0]:
+                    choice.textContent = choices[1];
+                    break;
+                case choices[1]:
+                    choice.textContent = choices[2];
+                    break;
+                case choices[2]:
+                    choice.textContent = choices[0];
+                    break;
+            }
+            break;
+    }
+}
 
 const body = document.querySelector('body');
 const content = document.querySelector('.content');
@@ -158,33 +188,9 @@ playAgain.textContent = 'Play again?'
 //     });
 // });
 
-prev.addEventListener('click', () => {
-    switch (choice.textContent) {
-        case choices[0]:
-            choice.textContent = choices[2];
-            break;
-        case choices[1]:
-            choice.textContent = choices[0];
-            break;
-        case choices[2]:
-            choice.textContent = choices[1];
-            break;
-    }
-});
+prev.addEventListener('click', () => selection(prev.textContent));
 
-next.addEventListener('click', () => {
-    switch (choice.textContent) {
-        case choices[0]:
-            choice.textContent = choices[1];
-            break;
-        case choices[1]:
-            choice.textContent = choices[2];
-            break;
-        case choices[2]:
-            choice.textContent = choices[0];
-            break;
-    }
-});
+next.addEventListener('click', () => selection(next.textContent));
 playAgain.addEventListener('click', () => {
     playAgainEvent();
 });
