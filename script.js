@@ -4,22 +4,15 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {  
     
-    let playerWin = (playerSelection, computerSelection) => {
-        playerScore = playerScore + 1;
+    let playerWin = (playerSelection, computerSelection) =>
         message.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
-        showRoundResults(playerScore, computerScore);
-    }
     
-    let playerLose = (playerSelection, computerSelection) => {
-        computerScore = computerScore + 1;
+    let playerLose = (playerSelection, computerSelection) =>
         message.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
-        showRoundResults(playerScore, computerScore);
-    }
     
-    let tie = (computerSelection) => {
+    
+    let tie = (computerSelection) =>
         message.textContent = `Tie! Both players chose ${computerSelection}!`;
-        showRoundResults(playerScore, computerScore);
-    }
     
     let showScores = (playerScore, computerScore) =>
     `Player score ${playerScore}, Computer score: ${computerScore}`;
@@ -158,12 +151,10 @@ const content = document.querySelector('.content');
 const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
 const choice = document.querySelector('.choice');
-const choiceContainer = document.querySelector('.choice-container');
 
 const choices = Array('Rock', 'Paper', 'Scissors');
 choice.textContent = choices[0];
 document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
-
 
 let playerScore = 0
 let computerScore = 0;
@@ -179,23 +170,6 @@ winner.classList.add('results');
 
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
-
-// buttons.forEach((button) => {
-//     button.addEventListener('click', () => {
-//         buttonClickCount = buttonClickCount + 1;
-
-//         playRound(button.value, getComputerChoice());
-        
-//         if(buttonClickCount == 5){ 
-//             changeButtonsState(buttons);
-        
-//             showGameWinner(playerScore, computerScore);
-        
-//             content.appendChild(playAgain);
-            
-//         }
-//     });
-// });
 
 prev.addEventListener('click', () => selection(prev.textContent));
 next.addEventListener('click', () => selection(next.textContent));
