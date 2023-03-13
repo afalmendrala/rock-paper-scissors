@@ -189,8 +189,5 @@ playAgain.textContent = 'Play again?'
 // });
 
 prev.addEventListener('click', () => selection(prev.textContent));
-
 next.addEventListener('click', () => selection(next.textContent));
-playAgain.addEventListener('click', () => {
-    playAgainEvent();
-});
+playAgain.addEventListener('click', () => playAgainEvent());
