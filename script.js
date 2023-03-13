@@ -122,12 +122,15 @@ function selection(button) {
             switch (choice.textContent) {
                 case choices[0]:
                     choice.textContent = choices[2];
+                    document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
                     break;
                 case choices[1]:
                     choice.textContent = choices[0];
+                    document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
                     break;
                 case choices[2]:
                     choice.textContent = choices[1];
+                    document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
                     break;
             }
             break;
@@ -135,12 +138,15 @@ function selection(button) {
             switch (choice.textContent) {
                 case choices[0]:
                     choice.textContent = choices[1];
+                    document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
                     break;
                 case choices[1]:
                     choice.textContent = choices[2];
+                    document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
                     break;
                 case choices[2]:
                     choice.textContent = choices[0];
+                    document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
                     break;
             }
             break;
@@ -152,9 +158,12 @@ const content = document.querySelector('.content');
 const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
 const choice = document.querySelector('.choice');
-const choices = Array('Rock', 'Paper', 'Scissors');
+const choiceContainer = document.querySelector('.choice-container');
 
+const choices = Array('Rock', 'Paper', 'Scissors');
 choice.textContent = choices[0];
+document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
+
 
 let playerScore = 0
 let computerScore = 0;
