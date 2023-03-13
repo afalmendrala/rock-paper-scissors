@@ -151,13 +151,11 @@ const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
 const choice = document.querySelector('.choice');
 const play = document.querySelector('#play');
-const computerChoice = document.querySelector('#computer');
 
 
 const choices = Array('Rock', 'Paper', 'Scissors');
 choice.textContent = choices[0];
 document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
-computerChoice.textContent = '?';
 
 
 let playerScore = 0
