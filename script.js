@@ -152,24 +152,15 @@ const next = document.querySelector('#next');
 const choice = document.querySelector('.choice');
 const play = document.querySelector('#play');
 
-
 const choices = Array('Rock', 'Paper', 'Scissors');
 choice.textContent = choices[0];
 document.getElementById('player-choice').src = `./images/${choice.textContent}.png`;
 
-
-let playerScore = 0
-let computerScore = 0;
-let buttonClickCount = 0;
 let computerChoice;
 
 let message = document.createElement('p');
-let scores = document.createElement('p');
-let winner = document.createElement('p');
 
 message.classList.add('results');
-scores.classList.add('results');
-winner.classList.add('results');
 
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
