@@ -161,6 +161,7 @@ document.getElementById('player-choice').src = `./images/${choice.textContent}.p
 let playerScore = 0
 let computerScore = 0;
 let buttonClickCount = 0;
+let computerChoice;
 
 let message = document.createElement('p');
 let scores = document.createElement('p');
@@ -175,5 +176,10 @@ playAgain.textContent = 'Play again?'
 
 prev.addEventListener('click', () => selection(prev.textContent));
 next.addEventListener('click', () => selection(next.textContent));
-play.addEventListener('click', () => playRound(choice.textContent, getComputerChoice()));
+play.addEventListener('click', () => {
+    computerChoice = getComputerChoice();
+    playRound(choice.textContent, computerChoice);
+    document.getElementById('computer-initial').remove();
+    document.getElementById('computer-choice').src = `./images/${computerChoice}.png`;
+});
 playAgain.addEventListener('click', () => playAgainEvent());
