@@ -166,12 +166,23 @@ message.classList.add('results');
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
 
+let buttonClickCount = 0;
+
 prev.addEventListener('click', () => selection(prev.textContent));
 next.addEventListener('click', () => selection(next.textContent));
 play.addEventListener('click', () => {
     computerChoice = getComputerChoice();
     playRound(choice.textContent, computerChoice);
-    document.getElementById('computer-initial').remove();
-    document.getElementById('computer-choice').src = `./images/${computerChoice}.png`;
+
+    if(buttonClickCount == 0) {
+        document.getElementById('computer-initial').remove();
+        document.getElementById('computer-choice').src = `./images/${computerChoice}.png`;
+    }
+    else {
+        document.getElementById('computer-choice').src = `./images/${computerChoice}.png`;
+    }
+
+    buttonClickCount+=1;
+
 });
 playAgain.addEventListener('click', () => playAgainEvent());
