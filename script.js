@@ -113,6 +113,7 @@ function playAgainEvent() {
     playerScore = 0;
     computerScore = 0;
     displayScores(playerScore, computerScore);
+    
     content.removeChild(winner);
     content.removeChild(playAgain);
     document.getElementById('computer-choice').src = "";
