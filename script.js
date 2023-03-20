@@ -102,14 +102,14 @@ function changeButtonsState(buttons) {
 }
 
 function playAgainEvent() {
-    changeButtonsState(buttons);
     playerScore = 0;
     computerScore = 0;
     buttonClickCount = 0;
-    content.removeChild(message);
-    content.removeChild(scores);
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
     content.removeChild(winner);
     content.removeChild(playAgain);
+    content.appendChild(play);
 }
 
 function selection(button) {
