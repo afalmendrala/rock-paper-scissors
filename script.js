@@ -179,6 +179,7 @@ computerScoreDisplay.textContent = computerScore;
 
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
+playAgain.setAttribute('id', 'play');
 
 let buttonClickCount = 0;
 
@@ -202,6 +203,7 @@ play.addEventListener('click', () => {
         document.getElementById('play').remove();
         document.querySelector('.results').remove();
         showGameWinner(playerScore, computerScore);
+        content.appendChild(playAgain);
     }
 
 });
