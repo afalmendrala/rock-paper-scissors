@@ -91,20 +91,6 @@ function showGameWinner(playerScore, computerScore) {
     }
 }
 
-function changeButtonsState(buttons) {
-    for(let i = 0; i < buttons.length; i++) {
-        if(buttons[i].disabled == false){
-            buttons[i].setAttribute('disabled', true);
-            buttons[i].className = "disabled";
-        }
-        else {
-            buttons[i].removeAttribute('disabled');
-            buttons[i].classList.remove('disabled');
-            buttons[i].classList.add('choice');
-        }
-    } 
-}
-
 function playAgainEvent() {
     let computerInitial = document.createElement('p');
     computerInitial.setAttribute('id', 'computer-initial');
@@ -113,7 +99,7 @@ function playAgainEvent() {
     playerScore = 0;
     computerScore = 0;
     displayScores(playerScore, computerScore);
-    
+
     content.removeChild(winner);
     content.removeChild(playAgain);
     document.getElementById('computer-choice').src = "";
