@@ -76,6 +76,8 @@ body {
 
 .results {
     font-size: 30px;
+    font-weight: 900;
+    font-style: italic;
 }
 
 #play {
