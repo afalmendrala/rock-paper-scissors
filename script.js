@@ -104,7 +104,6 @@ function changeButtonsState(buttons) {
 function playAgainEvent() {
     playerScore = 0;
     computerScore = 0;
-    buttonClickCount = 0;
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
     content.removeChild(winner);
@@ -200,6 +199,7 @@ play.addEventListener('click', () => {
     buttonClickCount+=1;
 
     if(buttonClickCount == 5) {
+        buttonClickCount = 0;
         document.getElementById('play').remove();
         document.querySelector('.results').remove();
         showGameWinner(playerScore, computerScore);
