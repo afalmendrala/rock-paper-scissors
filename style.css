@@ -50,18 +50,18 @@ body {
     transform: scaleX(-1);
 }
 
-.bottom {
+.player-bottom {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
 
-.choice {
+.player-choice {
     font-size: 25px;
     font-weight: 400;
 }
 
-.selection {
+.player-selection {
     font-size: 15px;
     font-weight: 800;
     padding: 5px;

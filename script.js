@@ -149,7 +149,7 @@ const body = document.querySelector('body');
 const content = document.querySelector('.middle');
 const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
-const choice = document.querySelector('.choice');
+const choice = document.querySelector('.player-choice');
 const play = document.querySelector('#play');
 
 
