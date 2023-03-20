@@ -8,46 +8,8 @@ body {
     padding: 0;
 }
 
-button {
-    all: unset;
-    border: 4px solid;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-}
-
-#play {
-    font-size: 30px;
-    padding: 5px 10px;
-    height: 50px 50px;
-    width: 200px;
-}
-
-.selection {
-    font-size: 15px;
-    font-weight: 800;
-    padding: 5px;
-}
-
-.middle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.bottom {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.disabled {
-    background: #d3d3d3;
-    color: #727272;
-    border: none;
-    padding: 5px 10px;
-    cursor: zoom-in;
+.top {
+    flex: 1;
 }
 
 .header {
@@ -68,11 +30,6 @@ button {
     font-weight: 300;
 }
 
-span {
-    font-style: italic;
-    font-weight: 700;
-}
-
 .content {
     display: flex;
     align-items: center;
@@ -80,31 +37,8 @@ span {
     padding: 50px;
 }
 
-.top {
-    flex: 1;
-}
-
 .player, .computer {
     text-align: center;
-}
-
-#player-choice {
-    transform: scaleX(-1);
-}
-
-.choice-container {
-    width: 200px;
-    height: 200px;
-    border: 5px solid;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.computer {
-    font-size: 150px;
-    font-weight: 900;
 }
 
 .choice-text {
@@ -112,16 +46,82 @@ span {
     font-weight: 900;
 }
 
+#player-choice {
+    transform: scaleX(-1);
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
 .choice {
     font-size: 25px;
     font-weight: 400;
+}
+
+.selection {
+    font-size: 15px;
+    font-weight: 800;
+    padding: 5px;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .results {
     font-size: 30px;
 }
 
+#play {
+    font-size: 30px;
+    padding: 5px 10px;
+    height: 50px 50px;
+    width: 200px;
+}
+
+.computer {
+    font-size: 150px;
+    font-weight: 900;
+}
+
 .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    all: unset;
+    border: 4px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.disabled {
+    background: #d3d3d3;
+    color: #727272;
+    border: none;
+    padding: 5px 10px;
+    cursor: zoom-in;
+}
+
+span {
+    font-style: italic;
+    font-weight: 700;
+}
+
+.choice-container {
+    width: 200px;
+    height: 200px;
+    border: 5px solid;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
