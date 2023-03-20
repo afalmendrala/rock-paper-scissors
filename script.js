@@ -23,8 +23,7 @@ function playRound(playerSelection, computerSelection) {
         
     let showRoundResults = (playerScore, computerScore) => {
         content.appendChild(message);
-        playerScoreDisplay.textContent = playerScore;
-        computerScoreDisplay.textContent = computerScore;
+        displayScores(playerScore, computerScore);
     }
 
     switch(playerSelection.toLowerCase()) {
@@ -72,6 +71,11 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function displayScores(playerScore, computerScore) {
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
+}
+
 function showGameWinner(playerScore, computerScore) {
     if(playerScore > computerScore) {
         winner.textContent = 'Player wins!';
@@ -108,8 +112,7 @@ function playAgainEvent() {
 
     playerScore = 0;
     computerScore = 0;
-    playerScoreDisplay.textContent = playerScore;
-    computerScoreDisplay.textContent = computerScore;
+    displayScores(playerScore, computerScore);
     content.removeChild(winner);
     content.removeChild(playAgain);
     document.getElementById('computer-choice').src = "";
@@ -183,8 +186,7 @@ message.classList.add('results');
 let playerScore = 0;
 let computerScore = 0;
 
-playerScoreDisplay.textContent = playerScore;
-computerScoreDisplay.textContent = computerScore;
+displayScores(playerScore, computerScore);
 
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
