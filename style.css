@@ -99,6 +99,10 @@ body {
     padding: 15px;
 }
 
+.score{
+    font-size: 30px;
+}
+
 button {
     all: unset;
     border: 4px solid;
