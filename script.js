@@ -163,6 +163,9 @@ document.getElementById('player-choice').src = `./images/${choice.textContent}.p
 
 let computerChoice;
 
+const computerInitial = document.querySelector('#computer-initial');
+computerInitial.textContent = "?";
+
 let message = document.createElement('p');
 
 let winner = document.createElement('p');
