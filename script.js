@@ -4,18 +4,18 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {  
     
-    let playerWin = (playerSelection, computerSelection) => {
-        message.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+    let playerWin = () => {
+        message.textContent = `You win!`;
         showRoundResults();
     }
     
-    let playerLose = (playerSelection, computerSelection) => {
-        message.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
+    let playerLose = () => {
+        message.textContent = `You lose!`;
         showRoundResults();
     }
     
-    let tie = (computerSelection) => {
-        message.textContent = `Tie! Both players chose ${computerSelection}!`;
+    let tie = () => {
+        message.textContent = `Tie!`;
         showRoundResults();
     }
         
@@ -26,43 +26,43 @@ function playRound(playerSelection, computerSelection) {
     switch(playerSelection.toLowerCase()) {
         case 'rock':
             if(computerSelection == 'Rock') {
-                tie(computerSelection);
+                tie();
                 break;
             }
             else if(computerSelection == 'Paper') {
-                playerLose(playerSelection, computerSelection);
+                playerLose();
                 break;
             }
             else {
-                playerWin(playerSelection, computerSelection);
+                playerWin();
                 break;
             }
         
         case 'paper':
             if(computerSelection == 'Rock') {
-                playerWin(playerSelection, computerSelection);
+                playerWin();
                 break;
             }
             else if(computerSelection == 'Paper') {
-                tie(computerSelection);
+                tie();
                 break;
             }
             else {
-                playerLose(playerSelection, computerSelection);
+                playerLose();
                 break;
             }
         
         case 'scissors':
             if(computerSelection == 'Rock') {
-                playerLose(playerSelection, computerSelection);
+                playerLose();
                 break;
             }
             else if(computerSelection == 'Paper') {
-                playerWin(playerSelection, computerSelection);
+                playerWin();
                 break;
             }
             else {
-                tie(computerSelection);
+                tie();
                 break;
             }            
     }
