@@ -5,22 +5,26 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {  
     
     let playerWin = () => {
+        playerScore+=1;
         message.textContent = `You win!`;
-        showRoundResults();
+        showRoundResults(playerScore, computerScore);
     }
     
     let playerLose = () => {
+        computerScore+=1;
         message.textContent = `You lose!`;
-        showRoundResults();
+        showRoundResults(playerScore, computerScore);
     }
     
     let tie = () => {
         message.textContent = `Tie!`;
-        showRoundResults();
+        showRoundResults(playerScore, computerScore);
     }
         
-    let showRoundResults = () => {
+    let showRoundResults = (playerScore, computerScore) => {
         content.appendChild(message);
+        playerScoreDisplay.textContent = playerScore;
+        computerScoreDisplay.textContent = computerScore;
     }
 
     switch(playerSelection.toLowerCase()) {
@@ -151,7 +155,8 @@ const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
 const choice = document.querySelector('.player-choice');
 const play = document.querySelector('#play');
-
+const playerScoreDisplay = document.querySelector('.player-score');
+const computerScoreDisplay = document.querySelector('.computer-score');
 
 const choices = Array('Rock', 'Paper', 'Scissors');
 choice.textContent = choices[0];
@@ -162,6 +167,12 @@ let computerChoice;
 let message = document.createElement('p');
 
 message.classList.add('results');
+
+let playerScore = 0;
+let computerScore = 0;
+
+playerScoreDisplay.textContent = playerScore;
+computerScoreDisplay.textContent = computerScore;
 
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?'
