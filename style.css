@@ -118,3 +118,8 @@ span {
     justify-content: center;
     align-items: center;
 }
+
+a {
+    color: #000;
+    font-weight: 800;
+}
