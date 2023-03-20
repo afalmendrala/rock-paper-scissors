@@ -102,12 +102,19 @@ function changeButtonsState(buttons) {
 }
 
 function playAgainEvent() {
+    let computerInitial = document.createElement('p');
+    computerInitial.setAttribute('id', 'computer-initial');
+    computerInitial.textContent = '?';
+
     playerScore = 0;
     computerScore = 0;
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
     content.removeChild(winner);
     content.removeChild(playAgain);
+    document.getElementById('computer-choice').src = "";
+    document.querySelector('.choice-container.computer').insertBefore(computerInitial, document.querySelector('.choice-container.computer')[0]);
+    document.createElement
     content.appendChild(play);
 }
 
