@@ -80,6 +80,10 @@ span {
     padding: 50px;
 }
 
+.top {
+    flex: 1;
+}
+
 .player, .computer {
     text-align: center;
 }
