@@ -166,6 +166,9 @@ let computerChoice;
 
 let message = document.createElement('p');
 
+let winner = document.createElement('p');
+winner.classList.add('winner');
+
 message.classList.add('results');
 
 let playerScore = 0;
@@ -194,6 +197,12 @@ play.addEventListener('click', () => {
     }
 
     buttonClickCount+=1;
+
+    if(buttonClickCount == 5) {
+        document.getElementById('play').remove();
+        document.querySelector('.results').remove();
+        showGameWinner(playerScore, computerScore);
+    }
 
 });
 playAgain.addEventListener('click', () => playAgainEvent());
