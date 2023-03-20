@@ -99,7 +99,7 @@ body {
     padding: 15px;
 }
 
-.score{
+.player-score, .computer-score{
     font-size: 30px;
 }
 
